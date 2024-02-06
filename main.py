@@ -80,6 +80,8 @@ def showPassword():
         if selected_item:
             treeview.delete(selected_item)
             del users[data[0]]
+            newName.delete(0, tk.END)
+            newSite.delete(0,END)
             with open("data.json", "w", encoding="utf-8") as json_file:
                 json.dump(users, json_file, ensure_ascii=False, indent=4)
         
